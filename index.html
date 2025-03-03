@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="./style.css" />
+    <link href="./logo.jpeg" rel="icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0057b8" />
+    <title>EXPO ATAMEKEN 2025</title>
+  </head>
+  <body>
+    <div class="hero">
+      <div class="hero-bg">
+        <img
+          src="nis.jpg"
+          alt="Школа"
+          style="width: 100%; height: 100%; object-fit: cover"
+        />
+      </div>
+      <div class="hero-content">
+        <h1 class="expo-title">EXPO ATAMEKEN 2025</h1>
+        <h2 class="expo-title" style="font-size: clamp(1.2rem, 4vw, 2rem)">
+          Атриум 2 этажа!!!
+        </h2>
+      </div>
+    </div>
+
+    <div class="team-info">
+      <img 
+        src="./kurator.jpeg" 
+        alt="Фото Салты" 
+        class="leader-photo rotating-photo" 
+        id="curatorPhoto" 
+        onclick="launchConfetti()"
+      />
+      <div class="confetti-container" id="confettiContainer"></div>
+      
+      <h2 style="margin-top: 1rem; color: var(--primary-blue)">
+        Наш любимый куратор <br>
+        Амирова Г. А.
+      </h2>
+
+      <div class="team-stats">
+        <div>
+          <h3>Классы</h3>
+          <p>10 "E", 12"B"</p>
+        </div>
+        <div>
+          <h3>Лидер Шанырака</h3>
+          <p>Джусупова Салтанат</p>
+        </div>
+        <div>
+          <h3>Количество человек в Шаныраке</h3>
+          <p>50</p>
+        </div>
+      </div>
+      
+      <div class="event-complete-container" style="text-align: center; margin: 2rem 0; padding: 1.5rem; background-color: rgba(0, 87, 184, 0.1); border-radius: 10px; border: 2px solid #0057b8;">
+        <h2 style="color: #0057b8; margin-top: 0; font-size: 1.5rem;">Мероприятие уже прошло!</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 0.5rem;">Благодарим всех за участие и поддержку!</p>
+        <p style="font-size: 1rem; color: #555;">Возможно, сайт скоро закроется.</p>
+      </div>
+      <div class="nav-dots">
+        <div class="nav-dot" onclick="showPopup('station')">Декорации</div>
+        <div class="nav-dot" onclick="showPopup('speakers')">
+          Контент Спикеров
+        </div>
+        <div class="nav-dot" onclick="showPopup('games')">Мини-игры</div>
+        <div class="nav-dot" onclick="showPopup('schedule')">Карта и Призы</div>
+      </div>
+
+      
+      
+      <button class="more-info-btn">
+        <a
+          style="text-decoration: none; color: white"
+          href="https://www.instagram.com/ATAMEKEN_shanyraq?igsh=d2lscjNsajNta2Y2"
+          >Инстаграм Шанырака</a
+        >
+      </button>
+      <button class="more-info-btn" onclick="showPopup('video')">
+        Авторское видео от нашего Шанырака
+      </button>
+    </div>
+
+    <div id="station-popup" class="popup-overlay">
+      <div class="popup">
+        <button class="close-btn" onclick="hidePopup('station')">
+          Закрыть
+        </button>
+        <div class="section-content">
+          <h2 class="section-title">Станция декора</h2>
+
+          <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown(this)">
+              Фотозона
+            </button>
+            <div class="dropdown-content">
+              <div class="dropdown-content-inner">
+                <p>
+                  Наша фотозона - идеальное место для запечатления ярких
+                  моментов события. Профессионально оформленное пространство с
+                  тематическими элементами.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown(this)">
+              Реквизиты
+            </button>
+            <div class="dropdown-content">
+              <div class="dropdown-content-inner">
+                <p>
+                  Специально подготовленные аксессуары и предметы для
+                  фотосессий. У нас есть всё необходимое, чтобы сделать ваши
+                  фотографии уникальными и запоминающимися.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown(this)">
+              Приколюхи
+            </button>
+            <div class="dropdown-content">
+              <div class="dropdown-content-inner">
+                <p>
+                  Забавные аксессуары, маски и другие элементы для создания
+                  веселых и необычных фотографий. Пусть каждый снимок будет
+                  особенным!
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown(this)">
+              Украшения
+            </button>
+            <div class="dropdown-content">
+              <div class="dropdown-content-inner">
+                <p>
+                  Стильное оформление пространства, включающее баннеры, гирлянды
+                  и другие декоративные элементы, создающие атмосферу праздника
+                  и уюта.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="speakers-popup" class="popup-overlay">
+      <div class="popup">
+        <button class="close-btn" onclick="hidePopup('speakers')">
+          Закрыть
+        </button>
+        <div class="section-content">
+          <h2 class="section-title">Спикеры</h2>
+
+          <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown(this)">
+              Спикер 1 - "Создание собственного государства"
+            </button>
+            <div class="dropdown-content">
+              <div class="dropdown-content-inner">
+                <p>
+                  Информация о спикере 1 и его презентации о создании
+                  собственного государства. Здесь могла быть более подробная
+                  информация, но нужно сделать атмосферу неизвестности.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown(this)">
+              Спикер 2 - "Различные формы справедливости"
+            </button>
+            <div class="dropdown-content">
+              <div class="dropdown-content-inner">
+                <p>
+                  Информация о спикере 2 и его презентации о различных формах
+                  справедливости. Здесь могла быть более подробная
+                  информация, но нужно сделать атмосферу неизвестности.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown(this)">
+              Спикер 3 - "Судьба общества"
+            </button>
+            <div class="dropdown-content">
+              <div class="dropdown-content-inner">
+                <p>
+                  Информация о спикере 3 и его презентации о судьбе общества.
+                  Здесь могла быть более подробная
+                  информация, но нужно сделать атмосферу неизвестности.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown(this)">
+              Спикер 4 - "Мировые переговоры"
+            </button>
+            <div class="dropdown-content">
+              <div class="dropdown-content-inner">
+                <p>
+                  Информация о спикере 4 и его презентации о мировых
+                  переговорах. Здесь могла быть более подробная
+                  информация, но нужно сделать атмосферу неизвестности.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div id="games-popup" class="popup-overlay">
+      <div class="popup">
+        <button class="close-btn" onclick="hidePopup('games')">Закрыть</button>
+        <div class="section-content">
+          <h2 class="section-title">Мини-игры</h2>
+
+          <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown(this)">
+              Игра 1 - «Побег из коррупции»
+            </button>
+            <div class="dropdown-content">
+              <div class="dropdown-content-inner">
+                <p>
+                  Участники оказываются в мире, где тени скрывают истину. Им
+                  предстоит расшифровать древние символы, найти единственного
+                  надежного союзника и обойти коварные ловушки, не поддаваясь на
+                  уловки. Лишь самые проницательные смогут выбраться.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown(this)">
+              Игра 2 - «Детектор правды»
+            </button>
+            <div class="dropdown-content">
+              <div class="dropdown-content-inner">
+                <p>
+                  Каждому предстоит сделать непростой выбор, когда правда и ложь
+                  сплетаются в сложный узор. Подготовленные испытания заставят
+                  задуматься над поступками, а неожиданные находки могут
+                  перевернуть представления о реальности.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown(this)">
+              Игра 3 - «Суд последних решений»
+            </button>
+            <div class="dropdown-content">
+              <div class="dropdown-content-inner">
+                <p>
+                  Перед участниками раскроется таинственное дело, требующее
+                  внимания и холодного рассудка. Они возьмут на себя роли, где
+                  каждая улика важна, каждое слово имеет значение, а решение
+                  может изменить все.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="schedule-popup" class="popup-overlay">
+      <div class="popup">
+        <button class="close-btn" onclick="hidePopup('schedule')">
+          Закрыть
+        </button>
+        <div class="section-content">
+          <h2 class="section-title">Расписание EXPO</h2>
+
+          <div style="text-align: center; margin-bottom: 20px">
+            <img
+              src="map.jpeg"
+              alt="Расписание мероприятий"
+              style="max-width: 100%; height: auto; margin-bottom: 10px"
+            />
+            <p style="font-size: 1rem; color: #333">
+              Эта карта поможет тебе пройти наши станции! <br> По ней вы должны собирать печати.
+            </p>
+          </div>
+
+          <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown(this)">
+              Открытие EXPO ATAMEKEN
+            </button>
+            <div class="dropdown-content">
+              <div class="dropdown-content-inner">
+                <p>
+                  <strong>Время:</strong> 10:00 - 14:00<br />
+                  <strong>Место:</strong> Атриум 2 этажа<br />
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown(this)">
+              Призы
+            </button>
+            <div class="dropdown-content">
+              <div class="dropdown-content-inner" style="margin-left: 30px; display: flex;">
+                <p>
+                  <ul>
+                    <li>Мини конфеты</li>
+                    <li>Шоколад (больших размеров)</li>
+                    <li>Сладости</li>
+                    <li>Именной стикер пак от нас</li>
+                    <img class="mapimage" src="./stikerpac.jpeg" alt="">
+                  </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="dropdown">
+            <button class="dropbtn" onclick="toggleDropdown(this)">
+              День Х
+            </button>
+            <div class="dropdown-content">
+              <div class="dropdown-content-inner" style="margin-left: 30px; display: flex;">
+                <p>
+                  <ul>
+                    Ожидайте чтоли
+                  </ul>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="video-popup" class="popup-overlay">
+      <div class="popup">
+        <button class="close-btn" onclick="hidePopup('video')">
+          Закрыть
+        </button>
+        <div class="section-content">
+          <h2 class="section-title">Видео</h2>
+          <div class="coming-soon">
+            <h1>Первая часть:</h1>
+            <iframe class="videofilm" width="560" height="315" 
+        src="https://www.youtube.com/embed/kMFhvLkCgIg" 
+        frameborder="0" allowfullscreen>
+</iframe>
+            <h1>Вторая часть:</h1>
+            <iframe class="videofilm" width="560" height="315" 
+        src="https://www.youtube.com/embed/kMFhvLkCgIg" 
+        frameborder="0" allowfullscreen>
+</iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="leadership-section">
+      <h2 class="section-title">Организационная команда EXPO ATAMEKEN</h2>
+
+      <div class="nav-dots departments-nav">
+        <div class="nav-dot active" onclick="showDepartment('decorations')">
+          Декор
+        </div>
+        <div class="nav-dot" onclick="showDepartment('program')">СММ</div>
+        <div class="nav-dot" onclick="showDepartment('tech')">Мини-игры</div>
+        <div class="nav-dot" onclick="showDepartment('pr')">Спикеры</div>
+        <div class="nav-dot" onclick="showDepartment('content')">Кодинг</div>
+      </div>
+
+      <div id="decorations" class="department-section active">
+        <h3 class="department-title">Департамент декора</h3>
+        <div class="department-grid">
+          <div class="department-row">
+            <div class="member-card">
+              <div
+                style="
+                  background-image: url(./adiler.jpeg);
+                  background-size: cover;
+                  background-repeat: no-repeat;
+                "
+                class="member-avatar"
+              ></div>
+              <div class="member-info">
+                <div class="member-title">Руководитель департамента</div>
+                <div class="member-name">Акбаев Адилер</div>
+              </div>
+            </div>
+            <div class="member-card">
+              <div
+                style="
+                  background-image: url(./kamila.jpeg);
+                  background-size: cover;
+                  background-repeat: no-repeat;
+                "
+                class="member-avatar"
+              ></div>
+              <div class="member-info">
+                <div class="member-title">Заместитель руководителя</div>
+                <div class="member-name">Бекболат Камила</div>
+              </div>
+            </div>
+
+            <div class="member-card">
+              <div
+                style="
+                  background-image: url(./adil.jpeg);
+                  background-size: cover;
+                  background-repeat: no-repeat;
+                "
+                class="member-avatar"
+              ></div>
+              <div class="member-info">
+                <div class="member-title">Дизайнер</div>
+                <div class="member-name">Айдарханов Адиль</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="department-subgroup">
+            <h4>Фотозона</h4>
+            <div class="department-row">
+              <div class="member-card">
+                <div
+                  style="
+                    background-image: url(./medina.jpeg);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                  "
+                  class="member-avatar"
+                ></div>
+                <div class="member-info">
+                  <div class="member-title">Дизайнер</div>
+                  <div class="member-name">Ғалымқызы Медина</div>
+                </div>
+              </div>
+              <div class="member-card">
+                <div
+                  style="
+                    background-image: url(./saltanat.jpeg);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                  "
+                  class="member-avatar"
+                ></div>
+                <div class="member-info">
+                  <div class="member-title">Оформитель</div>
+                  <div class="member-name">Джусупова Салтанат</div>
+                </div>
+              </div>
+              <div class="member-card">
+                <div
+                  style="
+                    background-image: url(./dina.jpeg);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                  "
+                  class="member-avatar"
+                ></div>
+                <div class="member-info">
+                  <div class="member-title">Оформитель</div>
+                  <div class="member-name">Галиева Дина</div>
+                </div>
+              </div>
+              <div class="member-card">
+                <div
+                  style="
+                    background-image: url(./aruzh.jpeg);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                  "
+                  class="member-avatar"
+                ></div>
+                <div class="member-info">
+                  <div class="member-title">Декоратор</div>
+                  <div class="member-name">Құрманәлі Аружан</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="program" class="department-section">
+        <h3 class="department-title">Департамент Контента</h3>
+        <div class="department-grid">
+          <div class="department-row">
+            <div class="member-card">
+              <div
+                style="
+                  background-image: url(./nurtore.jpeg);
+                  background-size: cover;
+                  background-repeat: no-repeat;
+                "
+                class="member-avatar"
+              ></div>
+              <div class="member-info">
+                <div class="member-title">Директор отдела СММ</div>
+                <div class="member-name">Мұзафар Нурторе</div>
+              </div>
+            </div>
+            <div class="member-card">
+              <div
+                style="
+                  background-image: url(./iliyas.jpeg);
+                  background-size: cover;
+                  background-repeat: no-repeat;
+                "
+                class="member-avatar"
+              ></div>
+              <div class="member-info">
+                <div class="member-title">Режисер</div>
+                <div class="member-name">Сериков Илияс</div>
+              </div>
+            </div>
+            
+            <div class="member-card">
+              <div
+                style="
+                  background-image: url(./beren.jpeg);
+                  background-size: cover;
+                  background-repeat: no-repeat;
+                "
+                class="member-avatar"
+              ></div>
+              <div class="member-info">
+                <div class="member-title">Оператор</div>
+                <div class="member-name">Тауфиқ Берен</div>
+              </div>
+            </div>
+          </div>
+          <div class="department-subgroup">
+            <h4>Помощники</h4>
+            <div class="department-row">
+              <div class="member-card">
+                <div
+                  style="
+                    background-image: url(./tairsh.jpeg);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                  "
+                  class="member-avatar"
+                ></div>
+                <div class="member-info">
+                  <div class="member-title">Режисер мимики Давида</div>
+                  <div class="member-name">Шамуратов Таир</div>
+                </div>
+              </div>
+              <div class="member-card">
+                <div
+                  style="
+                    background-image: url(./lays.jpeg);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                  "
+                  class="member-avatar"
+                ></div>
+                <div class="member-info">
+                  <div class="member-title">Монтажер</div>
+                  <div class="member-name">Утеуова Ляйсан</div>
+                </div>
+              </div>
+              <div class="member-card">
+                <div
+                  style="
+                    background-image: url(./alkh.jpeg);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                  "
+                  class="member-avatar"
+                ></div>
+                <div class="member-info">
+                  <div class="member-title">Постановщик</div>
+                  <div class="member-name">Булекбаев Алихан</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="tech" class="department-section">
+        <h3 class="department-title">Организация Мини-игр</h3>
+        <div class="department-grid">
+          <div class="department-row">
+            <div class="member-card">
+              <div
+                style="
+                  background-image: url(./demeu.jpeg);
+                  background-size: cover;
+                  background-repeat: no-repeat;
+                "
+                class="member-avatar"
+              ></div>
+              <div class="member-info">
+                <div class="member-title">Главный креатор</div>
+                <div class="member-name">Туганбаев Демеу</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="department-subgroup">
+            <h4>Помощники</h4>
+            <div class="department-row">
+              <div class="member-card">
+                <div
+                  style="
+                    background-image: url(./david.jpeg);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                  "
+                  class="member-avatar"
+                ></div>
+                <div class="member-info">
+                  <div class="member-title">Актер-каскадер</div>
+                  <div class="member-name">Горчаков Давид</div>
+                </div>
+              </div>
+              <div class="member-card">
+                <div
+                  style="
+                    background-image: url(./era.jpeg);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                  "
+                  class="member-avatar"
+                ></div>
+                <div class="member-info">
+                  <div class="member-title">Актер</div>
+                  <div class="member-name">Нұрадин Ерхан</div>
+                </div>
+              </div>
+              <div class="member-card">
+                <div
+                  style="
+                    background-image: url(./nazarik.jpeg);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                  "
+                  class="member-avatar"
+                ></div>
+                <div class="member-info">
+                  <div class="member-title">Помощник актера</div>
+                  <div class="member-name">Ахменкеев Назар</div>
+                </div>
+              </div>
+              <div class="member-card">
+                <div
+                  style="
+                    background-image: url(./fara.jpeg);
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                  "
+                  class="member-avatar"
+                ></div>
+                <div class="member-info">
+                  <div class="member-title">Помощник помощника</div>
+                  <div class="member-name">Тореғожа Фаррух</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="pr" class="department-section">
+        <h3 class="department-title">Спикеры</h3>
+        <div class="department-grid">
+          <div class="department-row">
+            <div class="member-card">
+              <div
+                style="
+                  background-image: url(./elnadir.jpeg);
+                  background-size: cover;
+                  background-repeat: no-repeat;
+                "
+                class="member-avatar"
+              ></div>
+              <div class="member-info">
+                <div class="member-title">Спикер</div>
+                <div class="member-name">Дүйсембай Эльнадир</div>
+              </div>
+            </div>
+            <div class="member-card">
+              <div
+                style="
+                  background-image: url(./nurik.jpeg);
+                  background-size: cover;
+                  background-repeat: no-repeat;
+                "
+                class="member-avatar"
+              ></div>
+              <div class="member-info">
+                <div class="member-title">Спикер</div>
+                <div class="member-name">Беркін Нұрымхан</div>
+              </div>
+            </div>
+            <div class="member-card">
+              <div
+                style="
+                  background-image: url(./truv.jpeg);
+                  background-size: cover;
+                  background-repeat: no-repeat;
+                "
+                class="member-avatar"
+              ></div>
+              <div class="member-info">
+                <div class="member-title">Спикер</div>
+                <div class="member-name">Уашев Таир</div>
+              </div>
+            </div>
+            <div class="member-card">
+              <div
+                style="
+                  background-image: url(./nurtore.jpeg);
+                  background-size: cover;
+                  background-repeat: no-repeat;
+                "
+                class="member-avatar"
+              ></div>
+              <div class="member-info">
+                <div class="member-title">Спикер</div>
+                <div class="member-name">Мұзафар Нурторе</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="content" class="department-section">
+        <h3 class="department-title">Кодеры</h3>
+        <div class="department-grid">
+          <div class="department-row">
+            <div class="member-card">
+              <div
+                style="
+                  background-image: url(./aldiyar.jpeg);
+                  background-size: cover;
+                  background-repeat: no-repeat;
+                "
+                class="member-avatar"
+              ></div>
+              <div class="member-info">
+                <div class="member-title">Frontend-Dev</div>
+                <div class="member-name">Абилов Алдияр</div>
+              </div>
+            </div>
+            <div class="member-card">
+              <div
+                style="
+                  background-image: url(./abyl.jpeg);
+                  background-size: cover;
+                  background-repeat: no-repeat;
+                "
+                class="member-avatar"
+              ></div>
+              <div class="member-info">
+                <div class="member-title">Backend-Dev</div>
+                <div class="member-name">Мукашев Абылайхан</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
